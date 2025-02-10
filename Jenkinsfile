@@ -4,22 +4,22 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Compiling main.cpp...'
-                bat 'C:\\MinGW\\bin\\gcc.exe main.cpp -o hello.exe -lstdc++'
+                bat script: '''
+                    cd ${WORKSPACE}
+                    "C:\\MinGW\\bin\\gcc.exe" main.cpp -o hello.exe -lstdc++
+                '''
             }
         }
         stage('Execute') {
             steps {
-                echo 'Executing hello.exe...'
+                echo 'Running hello.exe...'
                 bat 'hello.exe'
             }
         }
     }
     post {
-        success {
-            echo 'Build and execution successful!'
-        }
         failure {
-            echo 'Build failed. Please check for errors in main.cpp or GCC configuration.'
+            echo 'Build failed. Check the build log for details.'
         }
     }
 }

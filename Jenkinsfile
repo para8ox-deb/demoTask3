@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'C:\MinGW\bin\gcc.exe main.cpp -o hello.exe'
+                bat 'C:\\MinGW\\bin\\gcc.exe main.cpp -o hello.exe'
             }
         }
         stage('Execute') {

@@ -4,10 +4,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Compiling main.cpp...'
-                bat script: '''
-                    cd ${WORKSPACE}
+                bat """
+                    cd %WORKSPACE%
                     "C:\\MinGW\\bin\\gcc.exe" main.cpp -o hello.exe -lstdc++
-                '''
+                """
             }
         }
         stage('Execute') {

@@ -15,7 +15,7 @@ pipeline {
         stage('Execute') {
             steps {
                 echo 'Running hello.exe...'
-                bat './hello.exe'
+                bat 'hello.exe'
             }
         }
     }

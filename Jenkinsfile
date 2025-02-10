@@ -6,7 +6,7 @@ pipeline {
                 echo 'Compiling main.cpp...'
                 bat """
                     cd %WORKSPACE%
-                    "C:\\MinGW\\bin\\gcc.exe" main.cpp -o hello.exe -lstdc++
+                    C:\\MinGW\\bin\\gcc.exe main.cpp -o hello.exe -lstdc++
                 """
             }
         }

@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'C:\\MinGW\\bin\\gcc.exe main.cpp -o hello.exe' // Correct path to gcc
+                bat 'C:\\MinGW\\bin\\gcc.exe main.cpp -o hello.exe -lstdc++' // Correct path to gcc
             }
         }
         stage('Execute') {
